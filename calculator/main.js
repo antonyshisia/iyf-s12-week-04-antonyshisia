@@ -43,4 +43,4 @@ console.log(calculate(10, "/", 5));   // 2
 console.log(calculate(10, "/", 0));   // your error message
 console.log(calculate(10, "%", 3));   // 1
 console.log(calculate(2, "**", 3));   // 8
-console.log(calculate(10, "x", 5));   // Invalid operator
+console.log(calculate(10, "x", 5));   // Invalid operation
