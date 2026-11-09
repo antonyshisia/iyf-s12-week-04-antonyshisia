@@ -81,3 +81,148 @@ let yearTurn100 = birthYear + 100;
 console.log(`My age in days (approximately): ${ageInDays}`);
 console.log(`My age in hours (approximately): ${ageInHours}`);
 console.log(`I will turn 100 in the year: ${yearTurn100}`);
+
+// ===== Task 7.3: Functions =====
+
+// Exercise 1: Function Declarations
+
+// Function declaration
+function greet(name) {
+    return `Hello, ${name}!`;
+}
+
+// Function expression
+const add = function(a, b) {
+    return a + b;
+};
+
+// Arrow function
+const multiply = (a, b) => a * b;
+
+// Arrow function with body
+const divide = (a, b) => {
+    if (b === 0) {
+        return "Cannot divide by zero";
+    }
+    return a / b;
+};
+
+// Calling the functions (this is what makes them run)
+console.log(greet("Antony"));
+console.log(add(5, 3));
+console.log(multiply(4, 6));
+console.log(divide(10, 2));
+console.log(divide(10, 0));
+
+// Exercise 2: Build These Functions
+
+// 1. Area of a rectangle
+function calculateArea(width, height) {
+    return width * height;
+}
+
+console.log(calculateArea(5, 4));
+
+function celsiusToFahrenheit(celsius) {
+    return celsius * 9 / 5 + 32;
+}
+console.log(celsiusToFahrenheit(0)); // should be 32
+console.log(celsiusToFahrenheit(100)); // should be 212
+
+function isEven(number) {
+    return number % 2 === 0;
+}
+
+console.log(isEven(4)); // should be true
+console.log(isEven(7)); // should be false
+
+function getInitials(fullName) {
+    const words = fullName.split(" ");
+    return words[0].charAt(0) + words[1].charAt(0);
+}
+
+
+console.log(getInitials("Antony Shisia")); // should be "AS"
+
+function reverseString(str) {
+    return str.split("").reverse().join("");
+}
+console.log(reverseString("hello")); // should be "olleh"
+
+// Exercise 3: Default Parameters
+function greetWithDefaults(name = "Guest", greeting = "Hello") {
+    return `${greeting}, ${name}!`;
+}
+
+console.log(greetWithDefaults());
+console.log(greetWithDefaults("Antony"));
+console.log(greetWithDefaults("Antony", "Hi"));
+
+function calculateTip(bill, tipPercent = 15) {
+    return bill * tipPercent / 100;
+}
+
+console.log(calculateTip(100));      // should be 15
+console.log(calculateTip(200, 10));  // should be 20
+
+// ===== Task 7.4: Control Flow =====
+// Exercise 1: If/Else Statements
+function getGrade(score) {
+    if (score >= 90) {
+        return "A";
+    } else if (score >= 80) {
+        return "B";
+    } else if (score >= 70) {
+        return "C";
+    } else if (score >= 60) {
+        return "D";
+    } else {
+        return "F";
+    }
+}
+
+console.log(getGrade(95));
+console.log(getGrade(85));
+console.log(getGrade(72));
+console.log(getGrade(65));
+console.log(getGrade(40));
+
+// Exercise 2: Switch Statements
+function getDayName(dayNumber) {
+    switch (dayNumber) {
+        case 0:
+            return "Sunday";
+        case 1:
+            return "Monday";
+        case 2:
+            return "Tuesday";
+        // your turn: add cases 3, 4, 5 and 6 here
+        default:
+            return "Invalid day";
+    }
+}
+
+console.log(getDayName(0));
+console.log(getDayName(2));
+console.log(getDayName(9));
+
+// Exercise 3: Loops
+
+// For loop
+for (let i = 0; i < 5; i++) {
+    console.log(i);
+}
+
+// While loop
+let counter = 0;
+while (counter < 5) {
+    console.log(counter);
+    counter++;
+}
+
+// For...of (arrays)
+const colors = ["red", "green", "blue"];
+for (const color of colors) {
+    console.log(color);
+}
+
